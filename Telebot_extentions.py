@@ -21,9 +21,6 @@ class Converter:
             except KeyError:
                 raise APIException(f'Валюты {exchange_curr} в базе данных нет!')
 
-        if base_curr == exchange_curr:
-            raise APIException(f'Вы выбрали одинаковые валюты {base_curr}!')
-
         try:
             amount = float(amount)
         except ValueError:
