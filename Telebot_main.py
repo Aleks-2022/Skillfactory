@@ -60,7 +60,7 @@ def converter(message: telebot.types.Message):
         bot.reply_to(message, "Неверное количество параметров!")
 
     if base_curr == exchange_curr:
-        bot.reply_to(message, "Невозможно перевести одинаковые валюты!")
+        bot.reply_to(message, "Вы ввели одинаковые валюты!")
 
 
 bot.polling(none_stop=True)
