@@ -20,6 +20,8 @@ class Converter:
                 nominal_exchange = data["Valute"][f"{exchange_curr}"]["Nominal"]
             except KeyError:
                 raise APIException(f'Валюты {exchange_curr} в базе данных нет!')
+        else:
+            pass
         try:
             amount = float(amount)
         except ValueError:
