@@ -15,13 +15,11 @@ class Converter:
                 nominal_base = data["Valute"][f"{base_curr}"]["Nominal"]
             except KeyError:
                 raise APIException(f'Валюты {base_curr} в базе данных нет!')
-        elif exchange_curr != "RUB":
+        if exchange_curr != "RUB":
             try:
                 nominal_exchange = data["Valute"][f"{exchange_curr}"]["Nominal"]
             except KeyError:
-                raise APIException(f'Валюты {exchange_curr} в базе данных нет!')
-        else:
-            pass
+                raise APIException(f'Валюты {exchange_curr} в базе данных нет!')        
         try:
             amount = float(amount)
         except ValueError:
